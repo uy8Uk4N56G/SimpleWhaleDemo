@@ -5,13 +5,15 @@ on:
     branches: [ master ]
 
 jobs:
-
-  build:
+  hello_world_job:
     runs-on: self-hosted
+    name: A job to say hello
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v1
-      - name: Docker Setup Buildx
-        uses: docker/setup-buildx-action@v1.3.0        
+      - name: Hello world action step
+        id: hello
+        uses: actions/hello-world-docker-action@v1
+        with:
+          who-to-greet: 'Mona the Octocat'
+      # Use the output from the `hello` step
+      - name: Get the output time
+        run: echo "The time was ${{ steps.hello.outputs.time }}"    
