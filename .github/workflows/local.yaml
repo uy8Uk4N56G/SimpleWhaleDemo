@@ -13,11 +13,8 @@ jobs:
       # you must check out the repository
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Hello world action step
+      
+      - name: Docker run action step
         uses: ./ # Uses an action in the root directory
-        id: hello
         with:
           options: -d --restart=unless-stopped
-      # Use the output from the `hello` step
-      - name: Get the output time
-        run: echo "The time was ${{ steps.hello.outputs.time }}"
