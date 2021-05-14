@@ -18,7 +18,7 @@ jobs:
         run: docker build . -t torrserve:latest
       
       - name: Docker rm
-        run: docker rm --force torrserve 
+        run: docker rm --force /torrserve || true
         
       - name: Docker run
         run: docker run --name torrserve -d --restart=unless-stopped -p 8090:8090 torrserve:latest
