@@ -1,9 +1,8 @@
-name: CI to Docker Hub 
+name: Raspberry builder 
 
 on:
   push:
-    tags:
-      - "v*.*.*"
+    branches: [ master ]
 
 jobs:
 
