@@ -17,8 +17,11 @@ jobs:
       - name: Docker build
         run: docker build . -t torrserve:latest
       
+      - name: Docker rm
+        run: docker rm --force torrserve 
+        
       - name: Docker run
-        run: docker rm --force torrserve | docker run --name torrserve -d --restart=unless-stopped -p 8090:8090 torrserve:latest
+        run: docker run --name torrserve -d --restart=unless-stopped -p 8090:8090 torrserve:latest
         
       #- name: Docker build action step
       #  uses: docker/build-push-action@v2
