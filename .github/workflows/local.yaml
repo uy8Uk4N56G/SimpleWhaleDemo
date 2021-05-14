@@ -18,7 +18,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: false
-          tags: SimpleWhaleDemo:latest
+          tags: aimplewhaledemo:latest
           secrets: |
             GIT_AUTH_TOKEN=${{ secrets.GITHUB_TOKEN }}
       -
