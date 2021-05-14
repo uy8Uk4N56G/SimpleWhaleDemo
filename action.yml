@@ -12,4 +12,4 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - "-d --restart=unless-stopped"
+    - -d --restart=unless-stopped
