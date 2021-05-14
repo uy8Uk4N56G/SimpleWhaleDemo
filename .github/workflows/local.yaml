@@ -14,7 +14,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       
-      - name: Docker run action step
-        uses: ./ # Uses an action in the root directory
+      - name: Docker build action step
+        uses: docker/build-push-action@v2
         with:
+          tags: torrserve:latest
+          push: false
+      - name: Docker run
+        uses: addnab/docker-run-action@v3
+        with:
+          image: torrserve:latest
+          run: echo "hello world"
           options: -d --restart=unless-stopped
