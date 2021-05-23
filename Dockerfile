@@ -1,7 +1,7 @@
 FROM debian:latest
 MAINTAINER Anton Kiselev
 
-ENV TS_VERSION=1.1.77
+ENV TS_VERSION=MatriX.93
 
 EXPOSE 8090:8090
 
